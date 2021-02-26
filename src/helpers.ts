@@ -245,5 +245,8 @@ export function createVueComponent(vNode: VNode, parent: Vue, props: object, dat
  * @returns {boolean} `true` if they're the same, `false` otherwise.
  */
 function simpleEqual(objectA, objectB) {
+  if (typeof objectA === 'function' && typeof objectA === 'function') {
+    return objectA === objectB;
+  }
   return JSON.stringify(objectA) === JSON.stringify(objectB);
 }
